@@ -1,0 +1,166 @@
+//
+// SIDE NAVIGATION CSS
+// 
+
+.menu {
+    height: 100vh;
+    background-color: rgba(86, 161, 71, 1);
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    color: #fff;
+    z-index: 9;
+}
+
+.body {
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 150px 50px 50px;
+    overflow-y: auto;
+
+    /* Chrome, Edge, and Safari */
+    &::-webkit-scrollbar {
+        width: 10px;
+        background-color: #2e8a20;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: scroll;
+        border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #16640a;
+        border-radius: 14px;
+        border: 1px solid transparent;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #398d2c;
+    }
+
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+
+    .header {
+        color: #fff;
+        border-bottom: 1px solid #fff;
+        text-transform: uppercase;
+        font-size: 11px;
+        margin-bottom: 80px;
+    }
+}
+
+.active {
+    padding-left: 1rem;
+    min-width: 350px;
+}
+
+.menuWrapper {
+    margin-bottom: 2rem;
+
+    span {
+        font-size: 2rem;
+        font-weight: 600;
+        cursor: pointer;
+        user-select: none;
+    }
+}
+
+.subItem {
+    &:first-child {
+        margin-top: 1rem;
+    }
+
+    display: flex;
+    width: 100%;
+    color: #fff;
+    user-select: none;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+
+    &:hover {
+        font-weight: 500;
+    }
+}
+
+.activePage {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 6px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.arrowActive {
+    height: 20px;
+    width: 20px;
+    transform: rotate(-90deg);
+    transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.arrow {
+    height: 20px;
+    width: 20px;
+    transform: rotate(0deg);
+    transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+@media screen and (min-width:1024px) {
+    .menu {
+        max-width: 460px;
+    }
+
+    .body {
+        padding: 130px 80px 80px;
+    }
+
+    .menuWrapper {
+        span {
+            font-size: 2.5rem;
+        }
+    }
+
+    .nav {
+        font-size: 2.1rem;
+    }
+
+    .arrow {
+        width: 30px;
+        height: 30px;
+    }
+
+    .arrowActive {
+        width: 30px;
+        height: 30px;
+    }
+
+    .subItem {
+        font-size: 1.375rem;
+    }
+}
+
+
+@media screen and (min-width:1400px) {
+    .menu {
+        max-width: 35%;
+    }
+
+    .body {
+        padding: 130px 80px 80px;
+    }
+
+    .menuWrapper {
+        span {
+            font-size: 2.5rem;
+        }
+    }
+}
