@@ -1,8 +1,8 @@
 'use client'
 
 import './globals.scss'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import Header from '../components/header'
+import Footer from '../components/footer'
 import { useState, useEffect } from 'react';
 import Loader from './loading';
 // import { useRouter } from 'next/router';
