@@ -8,7 +8,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { slideUp } from './anim';
 import { motion } from 'framer-motion';
 
-export default function index() {
+export default function Index() {
 
   const firstText = useRef(null);
   const secondText = useRef(null);
