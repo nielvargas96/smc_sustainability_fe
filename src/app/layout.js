@@ -6,10 +6,19 @@ import Footer from '../components/footer'
 import FooterSVG from '../components/footerCircleSvg'
 import { useState, useEffect } from 'react';
 import Loader from './loading';
-// import { useRouter } from 'next/router';
+import Lenis from '@studio-freight/lenis'
 
 
 export default function RootLayout({ children }) {
+  const lenis = new Lenis()
+
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+
+  requestAnimationFrame(raf)
+
 
   // const [loading, setLoading] = useState(false);
   // const router = useRouter();

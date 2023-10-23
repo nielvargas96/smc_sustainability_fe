@@ -17,7 +17,7 @@ export default function page() {
     <>
       <Landing />
       <Ceo />
-      <Main />
+      {/* <Main /> */}
       <Sustainability />
       {/* <TextScroll /> */}
     </>

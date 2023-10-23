@@ -139,7 +139,7 @@ export default function Index() {
   };
 
   return (
-    <motion.aside variants={menuSlide} initial="initial" animate="enter" exit="exit" className={styles.menu}>
+    <motion.aside data-lenis-prevent variants={menuSlide} initial="initial" animate="enter" exit="exit" className={styles.menu}>
       <div className={styles.body}>
 
         <div className={styles.nav}>
