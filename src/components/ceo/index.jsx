@@ -12,15 +12,14 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
 export default function Index() {
 
-
-
   const refContainer = useRef();
   const { scrollYProgress } = useScroll({
     target: refContainer,
     offset: ['start end', 'end start']
   })
 
-  const x = useTransform(scrollYProgress, [0, 1], [0, 100])
+  const x = useTransform(scrollYProgress, [0, 1], [0, 100]);
+
 
   return (
     <section ref={refContainer} className='card' >

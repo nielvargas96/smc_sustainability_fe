@@ -47,35 +47,6 @@ export default function Index() {
             <p>+31 6 27 84 74 30</p>
           </Rounded>
         </div>
-        <div className={styles.info}>
-          <div>
-            <span>
-              <h3>Version</h3>
-              <p>2022 © Edition</p>
-            </span>
-            <span>
-              <h3>Version</h3>
-              <p>11:49 PM GMT+2</p>
-            </span>
-          </div>
-          <div>
-            <span>
-              <h3>socials</h3>
-              <Magnetic>
-                <p>Awwwards</p>
-              </Magnetic>
-            </span>
-            <Magnetic>
-              <p>Instagram</p>
-            </Magnetic>
-            <Magnetic>
-              <p>Dribbble</p>
-            </Magnetic>
-            <Magnetic>
-              <p>Linkedin</p>
-            </Magnetic>
-          </div>
-        </div>
       </div>
     </motion.div>
   )
