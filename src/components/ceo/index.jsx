@@ -9,7 +9,11 @@ import Link from 'next/link'
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
 
+
 export default function Index() {
+
+
+
   const refContainer = useRef();
   const { scrollYProgress } = useScroll({
     target: refContainer,
@@ -37,20 +41,20 @@ export default function Index() {
           </div>
         </div>
 
-        <div className='img-wrapper' >
-          <motion.div style={{ x }}>
+        <div className='img-wrapper'  >
+          <div>
             <Image src="/images/ceo.png" width={756} height={708} alt='Ramon S. Ang | President and Chief Operating Officer' />
-          </motion.div>
+          </div>
         </div>
       </div>
 
-      <div className='action-button' >
+      <motion.div className='action-button' style={{ x }}>
         <Link href="/our-approach/sustainability-governance-structure" title='Read More'>
           <Rounded backgroundColor='#f6c87f'>
             <span>Read more</span>
           </Rounded>
         </Link>
-      </div>
+      </motion.div>
 
     </section>
   )

@@ -10,6 +10,7 @@ import Loader from './loading';
 
 
 export default function RootLayout({ children }) {
+
   // const [loading, setLoading] = useState(false);
   // const router = useRouter();
 

@@ -16,6 +16,8 @@ export default function Index() {
   let xPercent = 0;
   let direction = -1;
 
+
+
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const sliderElement = slider.current;
