@@ -1,26 +1,57 @@
 'use client'
 
-import React from 'react';
+import { useRef } from 'react';
 import './style.scss';
 import Image from 'next/image';
-import Description from '../common/Description'
+import Description from '../common/Description/index';
+import Rounded from '../common/RoundedButton/index'
+import Link from 'next/link'
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
 
-export default function index() {
+export default function Index() {
+  const refContainer = useRef();
+  const { scrollYProgress } = useScroll({
+    target: refContainer,
+    offset: ['start end', 'end start']
+  })
+
+  const x = useTransform(scrollYProgress, [0, 1], [0, 100])
+
   return (
-    <section className='card'>
-      <div className='description'>
-        <h2>
-          <Description phrase={`Message from our president and CEO Message from our president and CEOMessage from our president and CEOMessage from our president and CEO`} />.
-        </h2>
-        <Description phrase={`Our four goals and sustainability roadmap will define for San Miguel a way forward in a world where supplies of basic needs like water and energy are limited and where far too many Filipinos live below the poverty line.`} />
-        <p>Ramon S. Ang</p>
-        <p>President and Chief Operating Officer</p>
-        <Description phrase={`Our four goals and sustainability roadmap will define for San Miguel a way forward in a world where supplies of basic needs like water and energy are limited and where far too many Filipinos live below the poverty line.`} />
+    <section ref={refContainer} className='card' >
+      <div className='bg-gradient'>
+        <Image fill={true} src="/images/bg_gradient.png" alt='Background Gradient' />
       </div>
-      <div className='img'>
-        <Image src="/images/ceo.png" width={700} height={700} alt='CEO' />
+      <div className='card-wrapper'>
+        <div className='description'>
+          <motion.h1 className='heading-1' >
+            <Description phrase={`Message from our `} />
+            <Description phrase={`president and CEO`} />
+          </motion.h1>
+          <div className='message'>
+            <Description phrase={`Our four goals and sustainability roadmap will define for San Miguel a way forward in a world where supplies of basic needs like water and energy are limited and where far too many Filipinos live below the poverty line.`} /></div>
+          <div className=''>
+            <p className='name'>Ramon S. Ang</p>
+            <p className='role'>President and Chief Operating Officer</p>
+          </div>
+        </div>
+
+        <div className='img-wrapper' >
+          <motion.div style={{ x }}>
+            <Image src="/images/ceo.png" width={756} height={708} alt='Ramon S. Ang | President and Chief Operating Officer' />
+          </motion.div>
+        </div>
       </div>
+
+      <div className='action-button' >
+        <Link href="/our-approach/sustainability-governance-structure" title='Read More'>
+          <Rounded backgroundColor='#f6c87f'>
+            <span>Read more</span>
+          </Rounded>
+        </Link>
+      </div>
+
     </section>
   )
 }

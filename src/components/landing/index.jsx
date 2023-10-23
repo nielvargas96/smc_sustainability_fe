@@ -4,7 +4,7 @@ import Image from 'next/image'
 import styles from './style.module.scss';
 import { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import { slideUp } from './anim';
 import { motion } from 'framer-motion';
 
@@ -21,11 +21,12 @@ export default function Index() {
     const sliderElement = slider.current;
     const firstTextElement = firstText.current;
     const secondTextElement = secondText.current;
+    let tl;
 
     if (sliderElement && firstTextElement && secondTextElement) {
-      const tl = gsap.to(sliderElement, {
+      tl = gsap.to(sliderElement, {
         scrollTrigger: {
-          trigger: sliderElement.current,
+          trigger: sliderElement,
           scrub: 0.25,
           start: 0,
           end: window.innerHeight,
@@ -35,11 +36,13 @@ export default function Index() {
       });
 
       requestAnimationFrame(animate);
-
-      return () => {
-        tl.kill();
-      };
     }
+
+    return () => {
+      if (tl) {
+        tl.kill();
+      }
+    };
   }, []);
 
   const animate = () => {

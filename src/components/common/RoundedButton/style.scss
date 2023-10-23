@@ -5,7 +5,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    z-index: 5;
 
+    a,
+    span,
     p {
         position: relative;
         z-index: 1;

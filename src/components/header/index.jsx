@@ -22,18 +22,20 @@ export default function Index() {
       if (isActive && event.target.tagName === 'A' && event.target.getAttribute('href')) {
         setIsActive(false);
       }
-    };
+    }
 
     if (isActive) {
       // Add event listeners when the burger menu is active
       document.addEventListener('click', handleClickOutside);
       document.addEventListener('click', handleClickInside);
+      document.body.classList.add('active');
     }
 
     return () => {
       // Remove the event listeners when the component unmounts or the menu is no longer active
       document.removeEventListener('click', handleClickOutside);
       document.removeEventListener('click', handleClickInside);
+      document.body.classList.remove('active');
     };
   }, [isActive]);
 
@@ -50,7 +52,16 @@ export default function Index() {
         </div>
 
         <div className={styles.header}>
-          <Rounded onClick={() => { setIsActive(!isActive) }}>
+          <Rounded backgroundColor='#56a147' onClick={() => {
+            setIsActive(!isActive);
+            // Add a class to the body element when the button is clicked
+            if (!isActive) {
+              document.body.classList.add('active');
+            } else {
+              document.body.classList.remove('active');
+            }
+          }}>
+
             <div className={styles.button}>
               <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div>
             </div>

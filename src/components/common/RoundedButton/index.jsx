@@ -1,10 +1,10 @@
 import React from 'react'
 import { useEffect, useRef } from 'react';
-import styles from './style.module.scss';
+import './style.scss';
 import gsap from 'gsap';
 import Magnetic from '../Magnetic';
 
-export default function Index({ children, backgroundColor = "#55B047", ...attributes }) {
+export default function Index({ children, backgroundColor = "#51b943", ...attributes }) {
 
   const circle = useRef(null);
   let timeline = useRef(null);
@@ -29,11 +29,11 @@ export default function Index({ children, backgroundColor = "#55B047", ...attrib
 
   return (
     <Magnetic>
-      <div className={styles.roundedButton} style={{ overflow: "hidden" }} onMouseEnter={() => { manageMouseEnter() }} onMouseLeave={() => { manageMouseLeave() }} {...attributes}>
+      <div className="roundedButton" onMouseEnter={() => { manageMouseEnter() }} onMouseLeave={() => { manageMouseLeave() }} {...attributes}>
         {
           children
         }
-        <div ref={circle} style={{ backgroundColor }} className={styles.circle}></div>
+        <div ref={circle} style={{ backgroundColor }} className="circle"></div>
       </div>
     </Magnetic>
   )

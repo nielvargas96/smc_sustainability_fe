@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 150px 50px 50px;
+    padding: 150px 30px 50px;
     overflow-y: auto;
 
     /* Chrome, Edge, and Safari */
@@ -155,12 +155,18 @@
     }
 
     .body {
-        padding: 130px 80px 80px;
+        padding: 130px 60px 80px;
     }
 
     .menuWrapper {
         span {
             font-size: 2.5rem;
         }
+    }
+}
+
+@media screen and (min-width:1600px) {
+    .body {
+        padding: 130px 80px 80px;
     }
 }

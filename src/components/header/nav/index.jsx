@@ -125,23 +125,9 @@ const navItems = [
   },
 ]
 
-const subNavVariants = {
-  initial: { opacity: 0, x: 10, height: "0" },
-  animate: { opacity: 1, x: 0, height: "auto" },
-  exit: { opacity: 0, x: 10, height: "0" },
-};
-
-
-// const toggleVariants = {
-//   initial: { opacity: 0, x: 50, display: "none" },
-//   animate: { opacity: 1, x: 0, display: "block" },
-//   exit: { opacity: 0, x: -50, display: "none" }
-// }
 
 export default function Index() {
-
   const pathname = usePathname();
-
   const [openAccordion, setOpenAccordion] = useState(false);
 
   const toggleAccordion = (index) => {
@@ -178,18 +164,16 @@ export default function Index() {
                   </>
                 )}
 
-
                 {/* SUB NAVIGATION */}
                 <AnimatePresence mode="wait">
                   {openAccordion === index && (
                     <motion.div
-                      variants={subNavVariants}
-                      initial="initial"
-                      animate="animate"
-                      exit="exit"
-                      transition={{ duration: 0.3 }}
+                      initial={{ opacity: 0, height: "0" }}
+                      animate={{ opacity: 1, height: "100%", overflow: "hidden" }}
+                      exit={{ opacity: 0, height: "0" }}
                       className={`${openAccordion === index ? styles.active : ''}`}
                     >
+
                       {data.subNav?.map((subNavItem, subIndex) => (
                         <motion.div
                           key={subIndex}
@@ -202,11 +186,13 @@ export default function Index() {
                           <Link href={subNavItem.href} className={subNavItem.href === pathname ? styles.activePage : ''}>{subNavItem.title}</Link>
                         </motion.div>
                       ))}
+
                     </motion.div>
                   )}
                 </AnimatePresence>
               </div>
             </div>
+
 
           ))}
 

@@ -3,6 +3,7 @@
 import './globals.scss'
 import Header from '../components/header'
 import Footer from '../components/footer'
+import FooterSVG from '../components/footerCircleSvg'
 import { useState, useEffect } from 'react';
 import Loader from './loading';
 // import { useRouter } from 'next/router';
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
           {/* {loading && <Loader />} */}
           <Header />
           <main className='main'>{children}</main>
+          {/* <FooterSVG /> */}
           <Footer />
         </div>
       </body>
