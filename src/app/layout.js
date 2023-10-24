@@ -19,7 +19,6 @@ export default function RootLayout({ children }) {
 
   requestAnimationFrame(raf)
 
-
   // const [loading, setLoading] = useState(false);
   // const router = useRouter();
 
