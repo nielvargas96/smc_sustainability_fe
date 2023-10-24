@@ -10,14 +10,14 @@ import Lenis from '@studio-freight/lenis'
 
 
 export default function RootLayout({ children }) {
-  const lenis = new Lenis()
-
-  function raf(time) {
-    lenis.raf(time)
-    requestAnimationFrame(raf)
+  if (typeof window !== 'undefined') {
+    const lenis = new Lenis();
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
   }
-
-  requestAnimationFrame(raf)
 
   // const [loading, setLoading] = useState(false);
   // const router = useRouter();
