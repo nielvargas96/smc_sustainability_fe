@@ -2,7 +2,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div>kalinga a</div>
+    <div>kalinga as</div>
   )
 }
 
