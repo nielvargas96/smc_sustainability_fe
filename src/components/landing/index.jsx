@@ -7,6 +7,7 @@ import { gsap } from 'gsap';
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { slideUp } from './anim';
 import { motion } from 'framer-motion';
+import imageKitLoader from '@/utils/imageKitLoader';
 
 export default function Index() {
 
@@ -14,11 +15,11 @@ export default function Index() {
   const secondText = useRef(null);
   const slider = useRef(null);
   let xPercent = 0;
-  let direction = -1;
-
 
 
   useLayoutEffect(() => {
+    let direction = -1;
+
     gsap.registerPlugin(ScrollTrigger);
     const sliderElement = slider.current;
     const firstTextElement = firstText.current;
@@ -48,6 +49,8 @@ export default function Index() {
   }, []);
 
   const animate = () => {
+    let direction = -1;
+
     if (xPercent < -100) {
       xPercent = 0;
     }
@@ -60,11 +63,11 @@ export default function Index() {
     xPercent += 0.05 * direction;
   }
 
-
   return (
     <motion.section variants={slideUp} initial="initial" animate="enter" className={styles.landing}>
       <Image
-        src='/images/world_of_good.png'
+        loader={imageKitLoader}
+        src='A_World_of_Good.jpg'
         fill={true}
         alt="A World of Good"
       />

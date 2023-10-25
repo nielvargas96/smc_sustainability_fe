@@ -7,7 +7,8 @@ import { slideUp } from './anim';
 export default function Index({ phrase }) {
 
   const description = useRef(null);
-  const isInView = useInView(description, { once: true, amount: 0.8 });
+  const isInView = useInView(description);
+  // const isInView = useInView(description, { once: true, amount: 0.8 });
 
   return (
     <div ref={description} className={styles.description}>

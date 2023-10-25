@@ -6,23 +6,14 @@ import Footer from '../components/footer'
 import FooterSVG from '../components/footerCircleSvg'
 import { useState, useEffect } from 'react';
 import Loader from './loading';
-import Lenis from '@studio-freight/lenis'
-
+import { SmoothScrollProvider } from '@/components/smoothScroll'
 
 export default function RootLayout({ children }) {
-  if (typeof window !== 'undefined') {
-    const lenis = new Lenis();
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-  }
 
   // const [loading, setLoading] = useState(false);
   // const router = useRouter();
 
-  // // Listen for page navigation events (e.g., router changes) and show the preloader
+  // // // Listen for page navigation events (e.g., router changes) and show the preloader
   // useEffect(() => {
   //   const startLoading = () => setLoading(true);
   //   const stopLoading = () => setLoading(false);
@@ -41,15 +32,17 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body>
-        <div className='app'>
-          {/* {loading && <Loader />} */}
-          <Header />
-          <main className='main'>{children}</main>
-          {/* <FooterSVG /> */}
-          <Footer />
-        </div>
-      </body>
+      <SmoothScrollProvider>
+        <body>
+          <div className='app'>
+            {/* {loading && <Loader />} */}
+            <Header />
+            <main className='main'>{children} </main>
+            {/* <FooterSVG /> */}
+            <Footer />
+          </div>
+        </body>
+      </SmoothScrollProvider>
     </html>
   )
 }

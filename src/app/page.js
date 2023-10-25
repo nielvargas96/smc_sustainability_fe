@@ -1,6 +1,6 @@
 import Landing from '../components/landing'
 import Main from '../components/main'
-import Ceo from '../components/ceo/index'
+import Card from '../components/card/index'
 import Sustainability from '../components/sustainability'
 // import TextScroll from '../components/TextScroll/index'
 
@@ -12,11 +12,10 @@ export const metadata = {
 // const [isLoading, setIsLoading] = useState(true);
 
 export default function page() {
-
   return (
     <>
       <Landing />
-      <Ceo />
+      <Card />
       {/* <Main /> */}
       <Sustainability />
       {/* <TextScroll /> */}

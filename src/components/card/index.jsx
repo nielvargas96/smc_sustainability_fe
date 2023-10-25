@@ -7,7 +7,7 @@ import Description from '../common/Description/index';
 import Rounded from '../common/RoundedButton/index'
 import Link from 'next/link'
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
-
+import imageKitLoader from '@/utils/imageKitLoader';
 
 
 export default function Index() {
@@ -24,7 +24,7 @@ export default function Index() {
   return (
     <section ref={refContainer} className='card' >
       <div className='bg-gradient'>
-        <Image fill={true} src="/images/bg_gradient.png" alt='Background Gradient' />
+        <Image loader={imageKitLoader} fill={true} src="bg_gradient.png" alt='Background Gradient' />
       </div>
       <div className='card-wrapper'>
         <div className='description'>
@@ -42,7 +42,7 @@ export default function Index() {
 
         <div className='img-wrapper'  >
           <div>
-            <Image src="/images/ceo.png" width={756} height={708} alt='Ramon S. Ang | President and Chief Operating Officer' />
+            <Image loader={imageKitLoader} src="ceo.png" width={756} height={708} alt='Ramon S. Ang | President and Chief Operating Officer' />
           </div>
         </div>
       </div>

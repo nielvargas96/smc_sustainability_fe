@@ -6,12 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "next export && next build",
     "lint": "next lint"
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.27",
+    "@studio-freight/react-lenis": "^0.0.36",
     "framer-motion": "^10.16.4",
     "gsap": "^3.12.2",
+    "locomotive-scroll": "^5.0.0-beta.8",
     "next": "13.5.5",
     "react": "^18",
     "react-dom": "^18",

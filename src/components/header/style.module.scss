@@ -77,6 +77,21 @@
     // z-index: 20;
 }
 
+.desktopNav {
+    display: flex;
+}
+
+.menu {
+    display: flex;
+}
+
+.subMenu {
+    display: none;
+}
+
+.menuWrapper {
+    display: flex;
+}
 
 @media screen and (min-width:1024px) {
     .headerContainer {
